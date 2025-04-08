@@ -1,11 +1,11 @@
 <section>
-  <div class="container border border-dark border-3 text-white mt-5">
-    <table class="table">
+  <div class="container mt-5 bungee-tint-regular p-0">
+    <table class="table table-light">
       <thead>
         <tr>
           <th scope="col">Codice Treno</th>
           <th scope="col">Partenza</th>
-          <th scope="col">Arrivo</th>
+          <th scope="cols">Arrivo</th>
           <th scope="col">Stazione di Partenza</th>
           <th scope="col">Stazione di arrivo</th>
           <th scope="col">Ritardo</th>
@@ -18,7 +18,7 @@
       <tbody>
         @foreach ($trains as $train)
         <tr>
-          <th scope="row">{{$train['code_train']}}</th>
+          <td scope="row">{{$train['code_train']}}</td>
           <td>{{$train['arrive_train']}}</td>
           <td>{{$train['departure_train']}}</td>
           <td>{{$train['arrive_station']}}</td>

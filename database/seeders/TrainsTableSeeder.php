@@ -14,9 +14,6 @@ class TrainsTableSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-
-        Train::truncate();
-
      for($i = 0; $i < 20; $i++){
 
         do {
