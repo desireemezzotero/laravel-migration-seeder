@@ -16,12 +16,35 @@
       </thead>
 
       <tbody>
+        @foreach ($trains as $train)
         <tr>
-          <th scope="row">1</th>
-          <td></td>
-          <td></td>
-          <td></td>
+          <th scope="row">{{$train['code_train']}}</th>
+          <td>{{$train['arrive_train']}}</td>
+          <td>{{$train['departure_train']}}</td>
+          <td>{{$train['arrive_station']}}</td>
+          <td>{{$train['departure_station']}}</td>
+
+          @if ($train['train_on_time'] && $train['canceled_trein']){
+            <td> - </td>
+          }@elseif($train['train_on_time']){
+            <td> Orario </td>
+          }@else{
+            <td> In ritardo </td>
+          }   
+          @endif
+
+          @if ($train['canceled_trein']){
+            <td>Cancellato</td>
+          }@else{
+            <td>Non cancellato</td>
+          }    
+          @endif
+
+          <td>{{$train['number_carriages']}}</td>
+          <td>{{$train['agency']}}</td>
         </tr>
+            
+        @endforeach
       </tbody>
 
     </table>
